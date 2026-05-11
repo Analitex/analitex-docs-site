@@ -38,6 +38,16 @@
 
 html,
 body {
+  min-height: 100%;
+  background:
+    radial-gradient(circle at top left, rgb(77 180 170 / 10%), transparent 40%),
+    radial-gradient(circle at top right, rgb(255 165 94 / 9%), transparent 34%),
+    var(--ifm-background-color);
+}
+
+#__docusaurus {
+  min-height: 100vh;
+  min-height: 100dvh;
   background:
     radial-gradient(circle at top left, rgb(77 180 170 / 10%), transparent 40%),
     radial-gradient(circle at top right, rgb(255 165 94 / 9%), transparent 34%),
@@ -55,6 +65,9 @@ body {
 }
 
 .main-wrapper {
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  min-height: calc(100dvh - var(--ifm-navbar-height));
+  background: var(--ifm-background-color);
   animation: page-enter 450ms ease;
 }
 

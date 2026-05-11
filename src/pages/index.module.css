@@ -99,6 +99,8 @@
 }
 
 .mainSection {
+  min-height: calc(100vh - 24rem);
+  min-height: calc(100dvh - 24rem);
   padding: 2rem 0 3.2rem;
   background: linear-gradient(180deg, #fff 0%, #f6f9fb 100%);
 }
