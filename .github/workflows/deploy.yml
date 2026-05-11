@@ -1,0 +1,95 @@
+name: Build & Deploy Docs
+
+on:
+  push:
+    branches: [production]
+  repository_dispatch:
+    types: [docs-update]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout engine repo
+        uses: actions/checkout@v5
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Clone docs repo
+        run: |
+          if [ -n "${{ secrets.DOCS_REPO_TOKEN }}" ]; then
+            git clone --depth 1 --branch production https://x-access-token:${{ secrets.DOCS_REPO_TOKEN }}@github.com/analitex/analitex-docs.git external-docs
+          else
+            git clone --depth 1 --branch production https://github.com/analitex/analitex-docs.git external-docs
+          fi
+
+      - name: Replace docs and i18n folders
+        run: |
+          rm -rf docs
+          if [ ! -d external-docs/docs ]; then
+            echo "external-docs/docs not found"
+            exit 1
+          fi
+          mv external-docs/docs ./docs
+          rm -rf i18n
+          if [ -d external-docs/i18n ]; then
+            mv external-docs/i18n ./i18n
+          fi
+
+      - name: Copy registry links
+        run: |
+          mkdir -p static
+          if [ -f external-docs/registry/links.json ]; then
+            cp external-docs/registry/links.json static/links.json
+          fi
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+        env:
+          DOCSEARCH_APP_ID: ${{ secrets.DOCSEARCH_APP_ID }}
+          DOCSEARCH_API_KEY: ${{ secrets.DOCSEARCH_API_KEY }}
+          DOCSEARCH_INDEX_NAME: ${{ secrets.DOCSEARCH_INDEX_NAME }}
+
+      # Required for GitHub Actions Pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

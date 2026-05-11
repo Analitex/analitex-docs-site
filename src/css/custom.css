@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700&display=swap');
+
+:root {
+  --ifm-font-family-base: Manrope, "Segoe UI", sans-serif;
+  --ifm-heading-font-family: Unbounded, Manrope, sans-serif;
+
+  --ifm-color-primary: #127d72;
+  --ifm-color-primary-dark: #106f66;
+  --ifm-color-primary-darker: #0f695f;
+  --ifm-color-primary-darkest: #0c564d;
+  --ifm-color-primary-light: #148c7f;
+  --ifm-color-primary-lighter: #169384;
+  --ifm-color-primary-lightest: #1caf9d;
+  --ifm-background-color: #f8fbfd;
+  --ifm-code-font-size: 95%;
+  --ifm-navbar-background-color: rgb(255 255 255 / 75%);
+  --ifm-navbar-link-hover-color: #0f5f58;
+  --ifm-footer-background-color: #113634;
+  --ifm-footer-color: #d8ece8;
+  --ifm-footer-link-color: #ffffff;
+  --docusaurus-highlighted-code-line-bg: rgb(18 125 114 / 14%);
+}
+
+[data-theme='dark'] {
+  --ifm-background-color: #081a1f;
+  --ifm-background-surface-color: #10262d;
+  --ifm-color-primary: #47d4c3;
+  --ifm-color-primary-dark: #28c9b6;
+  --ifm-color-primary-darker: #20baa8;
+  --ifm-color-primary-darkest: #1b9b8c;
+  --ifm-color-primary-light: #58dacb;
+  --ifm-color-primary-lighter: #67ded1;
+  --ifm-color-primary-lightest: #8ce8de;
+  --ifm-navbar-background-color: rgb(8 24 29 / 72%);
+  --ifm-footer-background-color: #07171b;
+  --docusaurus-highlighted-code-line-bg: rgb(71 212 195 / 17%);
+}
+
+html,
+body {
+  background:
+    radial-gradient(circle at top left, rgb(77 180 170 / 10%), transparent 40%),
+    radial-gradient(circle at top right, rgb(255 165 94 / 9%), transparent 34%),
+    var(--ifm-background-color);
+}
+
+.navbar {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgb(17 80 73 / 10%);
+}
+
+.navbar__title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.main-wrapper {
+  animation: page-enter 450ms ease;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 996px) {
+  .navbar-sidebar {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .navbar-sidebar__items,
+  .navbar-sidebar__item {
+    height: calc(100vh - var(--ifm-navbar-height));
+    height: calc(100dvh - var(--ifm-navbar-height));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

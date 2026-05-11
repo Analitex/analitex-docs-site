@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Analitex Docs</title>
+  <desc id="desc">Документация сервиса оцифровки продаж на маркетплейсах</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081a1f"/>
+      <stop offset="0.55" stop-color="#102f32"/>
+      <stop offset="1" stop-color="#1d4c42"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="25%" cy="20%" r="55%">
+      <stop offset="0" stop-color="#47d4c3" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#47d4c3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="78%" cy="30%" r="44%">
+      <stop offset="0" stop-color="#ffb45f" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#ffb45f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glowA)"/>
+  <rect width="1200" height="630" fill="url(#glowB)"/>
+  <path d="M96 438 C248 382 341 470 492 410 C642 350 731 250 903 310 C1008 346 1089 333 1160 281" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="18" stroke-linecap="round"/>
+  <path d="M856 132 h188 a34 34 0 0 1 34 34 v188 a34 34 0 0 1 -34 34 H856 a34 34 0 0 1 -34 -34 V166 a34 34 0 0 1 34 -34z" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.16"/>
+  <path d="M880 325 h36 v-68 h-36zM938 325 h36V207h-36zM996 325h36v-96h-36z" fill="#47d4c3"/>
+  <path d="M880 214 c32 18 58 20 86 5 28 -15 45 -39 66 -35" fill="none" stroke="#ffb45f" stroke-width="12" stroke-linecap="round"/>
+  <text x="88" y="268" fill="#ffffff" font-family="Manrope, Arial, sans-serif" font-size="72" font-weight="800">Analitex Docs</text>
+  <text x="92" y="330" fill="#d8ece8" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="500">Документация сервиса оцифровки продаж</text>
+  <text x="92" y="376" fill="#d8ece8" font-family="Manrope, Arial, sans-serif" font-size="34" font-weight="500">на маркетплейсах</text>
+</svg>

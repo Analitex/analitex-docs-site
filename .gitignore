@@ -1,0 +1,65 @@
+.vscode/
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Production
+/build
+/dist
+/out
+
+# Generated files
+.docusaurus
+.cache-loader
+
+# Testing
+/coverage
+/.nyc_output
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# External docs (pulled via CI/CD)
+/external-docs
+
+# Package manager lock files (optional - include for reproducibility)
+# Uncomment if you want to exclude lock files:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Temp files
+*.tmp
+*.temp
+*.bak

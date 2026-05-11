@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Optional examples for private/service routes:
+# Disallow: /internal/
+# Disallow: /drafts/
+
+Sitemap: https://docs.analitex.ru/sitemap.xml
