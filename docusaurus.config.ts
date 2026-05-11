@@ -161,29 +161,6 @@ const config: Config = {
         },
       ],
     },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Ресурсы',
-          items: [
-            {
-              label: 'Начало',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Сайт Analitex',
-              href: 'https://analitex.ru',
-            },
-            {
-              label: 'Приложение',
-              href: 'https://app.analitex.ru',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Analitex. Built with Docusaurus.`,
-    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
